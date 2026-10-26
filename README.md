@@ -90,7 +90,19 @@ Electronics brought in the most revenue, but Beauty had the highest average sale
 
 ![County sales pivot](images/county-sales-pivot-switch.png)
 
-**Chart choice.** The pie gives Adults 50% of revenue, Young Adults 36%, Youth 14% and Seniors under 1%. A bar chart compares them more easily: lengths are easier to judge than angles, and the Seniors slice is unreadable.
+**Charts (bike sales visualisation lab)**
+
+![Revenue against profit by year](images/chart-revenue-vs-profit.png)
+
+A line chart suits change over time. Annual revenue roughly tripled between 2017 and 2021, with a dip in 2019, and profit followed the same path at a lower level.
+
+![Product revenue by country](images/chart-product-revenue-by-country.png)
+
+A stacked column chart shows each country's total and its make-up at once. The United States and Australia bring in the most revenue, and bikes make up most of every country's total.
+
+![Revenue by age group](images/chart-revenue-by-age-group.png)
+
+The pie gives Adults 50% of revenue, Young Adults 36%, Youth 14% and Seniors under 1%. A bar chart compares them more easily: lengths are easier to judge than angles, and the Seniors slice is unreadable.
 
 **HR payroll and headcount.** Sales is the largest department (6 people, £179,898 of the £391,056 salary bill), then Purchasing (5, £137,557) and Logistics (3, £73,601). Nine of the 14 employees are men, so total salary by gender mostly reflects headcount. Average salary is the fairer comparison: £28,176 for men and £27,494 for women. Flat deductions mean everyone takes home 55% of gross pay.
 
