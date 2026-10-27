@@ -1,70 +1,62 @@
 # 📊 Excel: sales data analysis
 
-Short business questions on sales, HR and other training data, answered in Excel with formulas, pivot tables, lookups and charts.
+**Formulas, pivot tables, lookups and charts used to answer short business questions on sales and HR data.**
+
+Six Excel workbooks from Week 1 of my bootcamp. I summarised retail sales, built pivot tables on bike and county sales, chose charts for a bike sales lab, practised lookups and calculated payroll for a small HR file. I also researched the UK laws on handling customer data.
 
 ## 🔎 At a glance
 
 | | |
 |---|---|
-| **Tools** | Microsoft Excel: sort and filter, SUM, AVERAGE, SUMIF, COUNTIF, pivot tables and pivot charts, SWITCH, XLOOKUP, VLOOKUP with a named range, COUNT and COUNTA, conditional formatting, line, column and pie charts |
+| **Tools** | Microsoft Excel |
 | **Datasets** | Retail sales (1,000 transactions), two bike sales lab files, a 12-row county sales table, a student scores sheet, 21 Atlantic hurricanes, an HR file of 14 employees |
 | **Bootcamp week** | Week 1 (September 2026), Level 3 Data Technician Skills Bootcamp, Leep Talent |
 | **Type** | Individual exercises on training datasets |
 | **Files** | My Excel workbooks and the bootcamp workbook with my written answers, listed at the bottom of this page |
 
-## 🎯 Objective
+## 💡 Skills demonstrated
 
-- **Retail:** what sold, in total and on average, by category and by gender?
-- **Bike sales:** which countries sell to which customer segments, and which is most profitable in each?
-- **County sales:** how do sales split by county and product, and which count as high, medium or low volume?
-- **Charts:** which chart best shows revenue, profit and revenue by age group?
-- **HR:** what does each employee take home, and how do headcount and salary split by department and gender?
+**✔️ Formulas and lookups**
+- SUM, AVERAGE, SUMIF and COUNTIF to summarise sales, salaries and headcount (retail sales, HR payroll)
+- Nested conditions with `SWITCH(TRUE, ...)` to label each sale High, Medium or Low (county sales)
+- XLOOKUP, and VLOOKUP including on a named range (retail sales, hurricanes, HR payroll)
+- COUNT versus COUNTA on lookup results (retail sales)
 
-I also practised lookups and researched the UK laws on customer data (summarised below).
+**✔️ Pivot tables**
+- Pivot tables and a pivot chart of order quantity and profit by country, age group and gender (bike sales)
+- A pivot table of sales volume by county and product (county sales)
 
-## 🗂️ Data
+**✔️ Sorting and formatting**
+- Sorting by age, subject, average and highest score (retail sales, student scores)
+- Conditional formatting with a colour-scaled average column (student scores)
 
-| Dataset | What it contains | Fields I used |
-|---|---|---|
-| Retail sales | 1,000 transactions, almost all dated 2023, across Beauty, Clothing and Electronics | Transaction ID, Gender, Age, Product Category, Quantity, Price per Unit, total sale |
-| Bike sales (pivot lab) | Orders by country, age group and gender | Country, Age_Group, Customer_Gender, Order_Quantity, Profit |
-| Bike sales (charts lab) | Revenue and profit by year, country, product and age group | Year, country, product category, age group, revenue and profit |
-| County sales | 12 rows: six English counties, three products | County, Product, Sales Volume |
-| Student scores | Subject marks for 10 students | Subject scores, average, highest score |
-| Atlantic hurricanes | 21 major hurricanes from 1870 to 2017, with a Saffir-Simpson category table | Name, Category, Max Wind Speed |
-| HR payroll and headcount | 14 fictional employees with salary, gender and department, plus hours worked over one week | Name, Gender, Salary, Department, daily hours |
+**✔️ Charts**
+- A line chart for change over time, a stacked column chart for totals and their make-up, and a pie chart, with my case for why a bar chart would be clearer (bike sales charts lab)
 
-The retail data is the synthetic "Retail Sales Dataset" from Kaggle (mohammadtalib786), so it holds no real customers' data. It states no currency, so values are described as sales, not pounds.
+**✔️ Checking the numbers**
+- Summaries that reconcile: retail to 456,000 and salaries to £391,056
+- A VLOOKUP that matches the original column for all 21 storms
+- Checking data against the brief: the task asked for commission, but the file has no commission column, so the figures are total sales
 
-## 🛠️ Approach
+## 📗 Exercises covered
 
-1. **Retail sales.** Sorted customers by age, then summarised total sales, quantity by gender and average sale for each category.
-2. **Student scores.** Sorted each subject, added a colour-scaled average column, then sorted by average and highest score.
-3. **Bike sales pivots.** Pivot tables and a pivot chart of order quantity and profit by country, age group and gender.
-4. **County sales.** A pivot table of sales volume by county and product, then `SWITCH(TRUE, ...)` to label each sale High (over 600), Medium (300 to 600) or Low (under 300).
-5. **Charts.** A line chart of revenue and profit, a stacked column chart of product revenue by country, and a pie chart of revenue by age group.
-6. **Lookups.** XLOOKUP to return each retail transaction's customer gender, with COUNT and COUNTA on the result, and VLOOKUP to return each hurricane category's wind speed.
-7. **HR payroll.** VLOOKUP on a named range turns each salary into an hourly rate (÷ 40 hours ÷ 52 weeks). Hours × rate gives gross pay, less the exercise's flat tax (32%), social security (8%) and pension (5%). SUMIF and COUNTIF summarise salary and headcount by department and gender.
+| Task | What I did |
+|---|---|
+| Retail sales | Sorted customers by age, then summarised total sales, quantity by gender and average sale for each category |
+| Student scores | Sorted each subject, added a colour-scaled average column, then sorted by average and highest score |
+| Bike sales pivots | Pivot tables and a pivot chart of order quantity and profit by country, age group and gender |
+| County sales | A pivot table of sales volume by county and product, then `SWITCH(TRUE, ...)` to label each sale High (over 600), Medium (300 to 600) or Low (under 300) |
+| Charts | A line chart of revenue and profit, a stacked column chart of product revenue by country, and a pie chart of revenue by age group |
+| Lookups | XLOOKUP to return each retail customer's gender, and VLOOKUP to return each hurricane category's wind speed |
+| HR payroll | VLOOKUP on a named range turns each salary into an hourly rate (÷ 40 hours ÷ 52 weeks). Hours × rate gives gross pay, less the exercise's flat tax (32%), social security (8%) and pension (5%) |
 
 ```
 =SWITCH(TRUE, C2 > 600, "High", C2 >= 300, "Medium", "Low")
 ```
 
-## 💡 Skills used
+The retail data is the synthetic "Retail Sales Dataset" from Kaggle (mohammadtalib786), so it holds no real customers' data. It states no currency, so values are described as sales, not pounds.
 
-**Technical**
-- Pivot tables built to answer specific questions
-- Nested conditions with `SWITCH(TRUE, ...)`
-- XLOOKUP and VLOOKUP (including on a named range), and COUNT versus COUNTA
-- SUMIF and COUNTIF summaries by department and gender
-- Conditional formatting and chart choice
-
-**Transferable**
-- Accuracy: summaries reconcile (retail to 456,000, salaries to £391,056), and my VLOOKUP matches the original column for all 21 storms
-- Checking data against the brief: the task asked for commission, but the file has no commission column, so the figures are total sales
-- Explaining a choice: why a bar chart beats a pie chart here
-
-## 📈 Results and findings
+## 📈 Results
 
 **Retail sales by category**
 
@@ -77,12 +69,7 @@ The retail data is the synthetic "Retail Sales Dataset" from Kaggle (mohammadtal
 
 Electronics brought in the most revenue, but Beauty had the highest average sale.
 
-![Retail sales summary](images/retail-sales-totals-and-averages.png)
-
-**Bike sales pivot questions**
-- Germany's orders all came from Adults (35 to 64), with an order quantity of 13.
-- Australia and the United Kingdom both have orders in every age group and gender.
-- Most profitable by segment: France for Youth ($10,507), Australia for Young Adults ($18,639), and the United States for Adults, women and men. The US made $60,370 of the $163,508 total.
+**Bike sales pivots.** Germany's orders all came from Adults (35 to 64). Australia and the United Kingdom have orders in every age group and gender. The most profitable country was France for Youth ($10,507), Australia for Young Adults ($18,639) and the United States for Adults, women and men. The US made $60,370 of the $163,508 total.
 
 ![Bike sales profit pivot](images/bike-pivot-profit.png)
 
@@ -90,42 +77,40 @@ Electronics brought in the most revenue, but Beauty had the highest average sale
 
 ![County sales pivot](images/county-sales-pivot-switch.png)
 
-**Charts (bike sales visualisation lab)**
+**Charts.** Annual revenue roughly tripled between 2017 and 2021, with a dip in 2019, and profit followed the same path at a lower level. The United States and Australia bring in the most revenue, and bikes make up most of every country's total.
 
 ![Revenue against profit by year](images/chart-revenue-vs-profit.png)
 
-A line chart suits change over time. Annual revenue roughly tripled between 2017 and 2021, with a dip in 2019, and profit followed the same path at a lower level.
-
-![Product revenue by country](images/chart-product-revenue-by-country.png)
-
-A stacked column chart shows each country's total and its make-up at once. The United States and Australia bring in the most revenue, and bikes make up most of every country's total.
+The pie gives Adults 50% of revenue, Young Adults 36%, Youth 14% and Seniors under 1%. A bar chart compares them more easily: lengths are easier to judge than angles, and the Seniors slice is unreadable.
 
 ![Revenue by age group](images/chart-revenue-by-age-group.png)
 
-The pie gives Adults 50% of revenue, Young Adults 36%, Youth 14% and Seniors under 1%. A bar chart compares them more easily: lengths are easier to judge than angles, and the Seniors slice is unreadable.
-
-**HR payroll and headcount.** Sales is the largest department (6 people, £179,898 of the £391,056 salary bill), then Purchasing (5, £137,557) and Logistics (3, £73,601). Nine of the 14 employees are men, so total salary by gender mostly reflects headcount. Average salary is the fairer comparison: £28,176 for men and £27,494 for women. Flat deductions mean everyone takes home 55% of gross pay.
+**HR payroll.** Sales is the largest department (6 people, £179,898 of the £391,056 salary bill), then Purchasing (5, £137,557) and Logistics (3, £73,601). Average salary is £28,176 for men and £27,494 for women. Flat deductions mean everyone takes home 55% of gross pay.
 
 ## 🔒 Handling data responsibly
 
 | Law | What it means for working with data |
 |---|---|
-| UK GDPR | Seven principles (lawfulness, fairness and transparency; purpose limitation; data minimisation; accuracy; storage limitation; integrity and confidentiality; accountability). Since 5 February 2026 there are seven lawful bases for processing, after the Data (Use and Access) Act 2025 added "recognised legitimate interests". It also applies to organisations outside the UK that offer goods or services to, or monitor, people in the UK. In practice: pull only the customer fields an analysis needs. |
-| Data Protection Act 2018 | Sets out the UK's detail, exemptions and fines (up to £17.5 million or 4% of global annual turnover, whichever is higher) and makes some misuse of personal data a criminal offence. Example: leave out customers who opted out of marketing, and delete the list when the campaign ends. |
-| Freedom of Information Act 2000 | Gives anyone a right to request recorded information from public bodies, which must respond within 20 working days. Notes and spreadsheet comments can be disclosable. Deliberately destroying requested records is an offence: in 2020 a town council clerk who deleted a recording was fined £400 and ordered to pay £1,493 costs. |
-| Computer Misuse Act 1990 | The UK's main anti-hacking law, covering insiders as well as outside attackers. Example: request access formally rather than borrowing a colleague's login. Breaches can lead to prosecution and prison. |
+| UK GDPR | Seven principles, including data minimisation and storage limitation. Since 5 February 2026 there are seven lawful bases for processing, after the Data (Use and Access) Act 2025 added "recognised legitimate interests". In practice: pull only the customer fields an analysis needs. |
+| Data Protection Act 2018 | Sets out the UK's exemptions and fines (up to £17.5 million or 4% of global annual turnover, whichever is higher). Example: leave out customers who opted out of marketing, and delete the list when the campaign ends. |
+| Freedom of Information Act 2000 | Anyone can request recorded information from public bodies, which must respond within 20 working days. Deliberately destroying requested records is an offence. |
+| Computer Misuse Act 1990 | The UK's main anti-hacking law, covering insiders as well as outside attackers. Example: request access formally rather than borrowing a colleague's login. |
 
-## 🧠 Challenges and what I learned
+## 🎓 Key learning outcomes
 
 - **Boundaries matter.** "Greater than 600" means a sale of exactly 600 is Medium, so the order of conditions in `SWITCH(TRUE, ...)` decides the answer.
-- **COUNT counts numbers only.** COUNT returned 0 for text columns while COUNTA returned 9.
-- **Check the whole table.** I first said only the UK sells to every segment; Australia does too.
-- **Lock ranges before copying.** In the gender headcount, the COUNTIF range shifted from B4:B17 to B5:B17 when copied down. The count is still right only because row 4 is a man; `$B$4:$B$17` fixes it.
-- **Round money at each step.** As built, six of the 14 payslips are a penny out when the displayed figures are added up, because unrounded values carry through. Wrapping each step in `ROUND(..., 2)` fixes it.
+- **COUNT counts numbers only.** It returned 0 for text columns, while COUNTA returned 9.
+- **Check the whole table.** I first said only the UK sells to every segment, but Australia does too.
+- **Compare averages when groups differ in size.** Nine of the 14 employees are men, so average salary is a fairer comparison than total salary.
 
-## 💼 Where this applies
+## 🧠 What I'd change
 
-Testing items against a threshold, checking that totals agree by segment and recalculating payroll deductions are everyday audit and tax work. For an analyst, picking the chart that answers the question makes a report usable by non-specialists.
+- **Lock ranges before copying.** In the gender headcount, the COUNTIF range shifted from B4:B17 to B5:B17 when copied down. The count is only right because row 4 is a man. `$B$4:$B$17` fixes it.
+- **Round money at each step.** Six of the 14 payslips are a penny out when the displayed figures are added up, because unrounded values carry through. Wrapping each step in `ROUND(..., 2)` fixes it.
+
+## 🛠️ Tools and technologies
+
+- **Microsoft Excel:** formulas, lookups, pivot tables and pivot charts, conditional formatting and charts
 
 ## 📁 Repository contents
 
